@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <h1>Cadastros de clientes</h1>
-    <form action="post">
+    <h1>Cadastros de Clientes</h1>
+    <form action="index.html" method="post">
         <fieldset>
             <legend>Dados básicos</legend>
             <div>
@@ -18,7 +18,8 @@
             </div>
             <div>
                 <label for="altura">Altura</label>
-                <input id="altura" name="altura" type="number" placeholder="Altura" min="0" max="3" step="0.01" width="100px">
+                <input id="altura" name="altura" type="number" placeholder="Altura" min="0" max="3" step="0.01"
+                    width="100px">
             </div>
 
             <div>
@@ -43,16 +44,39 @@
 
             <div>
                 <label for="genero">Genero</label>
-                <input id="masculino" type="radio" name="genero"><label >Masculino</label>
-                <input id="feminino" type="radio" name="genero"><label >Feminino</label>
-            </div>
-            
-            <div>
-                <label for="">Gosto de </label>
-                <input type="checkbox" name="gostos">
+                <input id="masculino" type="radio" name="genero"><label>Masculino</label>
+                <input id="feminino" type="radio" name="genero"><label>Feminino</label>
             </div>
 
-    
+            <div>
+                <label>Gosta de:</label>
+                <input id="ler" type="checkbox" value="Ler" name="gosto">
+                <label for="ler">Ler</label>
+                <input id="filme" type="checkbox" value="Filme" name="gosto">
+                <label for="filme">Filme</label>
+                <input id="esporte" type="checkbox" value="Esporte" name="gosto">
+                <label for="esporte">Esporte</label>
+            </div>
+
+            <div>
+                <label>Upload RG</label>
+                <input type="file" name="rgUpload">
+            </div>
+
+            <div>
+                <label>Estado de nascimento</label>
+                <select name="estadoNascimento" placeholder="Selecione...">
+                    <optgroup label="Sudeste">
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                    </optgroup>
+                    <optgroup label="Sul">
+                        <option value="SC">Santa Catarina</option>
+                        <option value="PR">Paraná</option>
+                    </optgroup>
+
+                </select>
+            </div>
 
             <button type="submit" widht="5px">Salvar</button>
             <button type="reset">Limpar</button>
