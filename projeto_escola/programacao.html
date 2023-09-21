@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Programação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ff0000; /* Cor vermelha da sua empresa */
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('images/programacao-scaled.jpg'); /* Substitua com a URL da imagem desejada */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 10%;
+            color: #fff;
+            font-style:inherit;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Features Section Styles */
+        .features {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            margin-bottom: 30px;
+        }
+
+        /* Pricing Section Styles */
+        .pricing {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #c03333; /* Cor vermelha da sua empresa */
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #ff0000; /* Cor vermelha da sua empresa */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #990000; /* Cor vermelha escura ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Curso de Programação</h1>
+    </header>
+
+    <section class="hero">
+        <div class="fade-in">
+            <h2>Aprenda a programar e transforme o seu futuro!</h2>
+            <p>Desenvolva habilidades em programação, construa aplicativos incríveis e alcance seu potencial.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="fade-in">
+            <h2>O que você vai aprender?</h2>
+            <div class="feature">Desenvolvimento web front-end e back-end.</div>
+            <div class="feature">Programação em linguagens populares.</div>
+            <div class="feature">Criação de aplicativos móveis.</div>
+            <div class="feature">Banco de dados e gerenciamento de dados.</div>
+            <div class="feature">Segurança da informação e testes de penetração.</div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="fade-in">
+            <h2>Preço da Mensalidade</h2>
+            <div class="price">R$ 500,00 por mês</div>
+            <p>Junte-se a nós e comece sua jornada de programação hoje!</p>
+            <a href="cadastro.html" class="btn">Inscreva-se</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Curso de Programação. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

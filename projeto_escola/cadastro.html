@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Form Styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 40px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('arrow-down.png'); /* Substitua com a seta de seleção desejada */
+            background-repeat: no-repeat;
+            background-position: right center;
+            width: 105%;
+        }
+
+        .btn {
+            background-color: #ff0000; /* Cor vermelha da sua empresa */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #990000; /* Cor vermelha escura ao passar o mouse */
+        }
+
+        /* Confirmation Styles */
+        .confirmation {
+            display: none;
+            background-color: #00cc00; /* Verde para indicar sucesso */
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form action="https://650c88b147af3fd22f67bffe.mockapi.io/ap1/v1/alunos" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+                <div class="form-group">
+                    <div class="select">
+                        <label for="curso">Escolha um curso:</label>
+                    <select id="curso" name="curso" required>
+                        <option value="programacao">Programação</option>
+                        <option value="auxiliar_veterinario">Auxiliar de Veterinário</option>
+                        <option value="ingles">Inglês</option>
+                    </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn">Confirmar Inscrição</button>
+                    </div>
+                </div>
+            </fieldset>
+            
+            
+        </form>
+        
+        <!-- Confirmation Message -->
+        <div class="confirmation" id="confirmation-message">
+            Cadastro concluído!
+        </div>
+    </div>
+
+    <script>
+        // Exibe a mensagem de confirmação após o envio do formulário
+        const form = document.querySelector('form');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            confirmationMessage.style.display = 'block';
+            form.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
