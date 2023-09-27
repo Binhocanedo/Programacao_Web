@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - BATMAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BATMAN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Descrição do produto<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Fotos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container mt-5">
+        <div class="row">
+            <!-- Descrição do Produto -->
+            <div class="col-md-6">
+                <h2>Descrição do Produto</h2>
+                <p>
+                    O BATMAN é um incrível brinquedo antigo que fará as delícias dos fãs do Cavaleiro das Trevas. Ele vem com todos os detalhes icônicos do Batman e é perfeito para colecionadores e crianças.
+                </p>
+                <h3>Preço: R$ 49,99</h3>
+                <button id="addToCartBtn">Adicionar ao carrinho</button>
+
+    <div id="confirmationBox" style="display: none;">
+        Produto adicionado ao carrinho!
+    </div>
+
+    <script>
+        // Função para mostrar a mensagem de confirmação
+        function showConfirmation() {
+            const confirmationBox = document.getElementById("confirmationBox");
+            confirmationBox.style.display = "block";
+
+            // Oculta a mensagem após 2 segundos (opcional)
+            setTimeout(() => {
+                confirmationBox.style.display = "none";
+            }, 2000); // 2000 milissegundos = 2 segundos
+        }
+
+        // Adiciona um ouvinte de evento ao botão
+        const addToCartBtn = document.getElementById("addToCartBtn");
+        addToCartBtn.addEventListener("click", showConfirmation);
+    </script>
+            </div>
+            
+            <!-- Imagens do Produto -->
+            <div class="col-md-6">
+                <h2>Fotos do Produto</h2>
+                <div id="product-images" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/brinquedo_batman.webp" class="d-block w-100" alt="Imagem 1" width="100">
+                            
+                        </div>
+                        <img src="img/boneco_batman_imaginext_dc_super_friends_xl_mattel_76847284_4_93bdbdc37ce1662b8d2e68822e7d30a2.webp" class="d-block w-100" alt="Imagem 1">
+                        <img src="img/batman_lateral.webp" class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <a class="carousel-control-prev" href="#product-images" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product-images" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próxima</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Scripts do Bootstrap (jQuery e Popper.js são necessários) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Jmi4Ao6v4vPhL2Wp5f5o5xHpv6HJGCIyNM/n5mIw5Pw5f5o5" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-rk/r5mL5Lw5e5bLd5z5n5n5n5n5i5f5H5u5v5H5u5H5u5H5u5P5H5u5f5P5P5P5/" crossorigin="anonymous"></script>
+</body>
+</html>
