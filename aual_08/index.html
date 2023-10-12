@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <label for="pesquisar" class="form-label">Pesquisar</label>
+                <input type="text" class="form-control" id="pesquisar">
+            </div>
+            <div class="col-md-4" style="margin-top: 30px;">
+                <button class="btn btn-primary" type="button"><i class="bi bi-search"></i> Pesquisar</button>
+                <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                    data-bs-target="#addUsuarioModal">Adicionar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>E-MAIL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addUsuarioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form id="form-usuario">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro de Usuario</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-usuario">
+                        <div class="ab-3"></div>
+
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome">
+
+                    </form>
+
+                    <div class="ab-3"></div>
+
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="text" class="form-control" id="email" name="email">
+
+                    </form>
+
+                    <div class="ab-3"></div>
+
+                    <label for="nome" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        var UrlApi = "https://6514aa23dc3282a6a3cd5d7c.mockapi.io/usuarios"
+        var usuarios = [];
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("Carregar HTML, e chamou a função");
+
+            document.getElementById("form-usuario").addEventListener("submit", function(f){
+                f.preventDefault();
+                salvarUsuario(f);
+            });
+
+
+
+            obterUsuarios();
+        });
+
+        function salvarUsuario(form){
+            let json = {
+                nome: form.target{"nome"}.value;
+                email: form.target{"email"}.value;
+                senha: form.targe{"senha"}.value;
+            };
+
+            fetch(UrlApi, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(json)
+            }).then((response) => {
+                obterUsuarios();
+                alert("Salvo com sucesso !!!");
+                
+            });
+        }
+
+        function obterUsuarios() {
+            fetch(UrlApi).then((response) => response.json()
+                .then((data) => {
+                    console.log(data)
+                    usuarios = data;
+                    atualizarTabela(usuarios);
+                }));
+        }
+
+        function atualizarTabela(array) {
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+            array.forEach(usu => {
+
+                let tr = document.createElement("tr");
+
+                let tdId = document.createElement("td");
+                tdId.innerHTML = usu.id;
+
+                let tdNome = document.createElement("td");
+                tdNome.innerHTML = usu.nome;
+
+                let tdEmail = document.createElement("td");
+                tdEmail.innerHTML = usu.email;
+
+                tr.appendChild(tdId);
+                tr.appendChild(tdNome);
+                tr.appendChild(tdEmail);
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+
+</html>
