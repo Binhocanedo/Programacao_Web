@@ -7,12 +7,16 @@ import { CalculdoraComponent } from './calculdora/calculdora.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MediaAlunoComponent } from './media-aluno/media-aluno.component';
+import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
+import { SeguroAutomobilisticoComponent } from './seguro-automobilistico/seguro-automobilistico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculdoraComponent,
-    MediaAlunoComponent
+    MediaAlunoComponent,
+    CadastroAlunoComponent,
+    SeguroAutomobilisticoComponent
   ],
   imports: [
     BrowserModule,

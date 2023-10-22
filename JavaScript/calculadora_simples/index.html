@@ -1,0 +1,26 @@
+<script>
+    var numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    var numero2 = parseFloat(prompt("Digite o segundo número:"));
+    var operacao = prompt("Digite a operação (+, -, *, /):");
+    var resultado;
+  
+    switch (operacao) {
+      case "+":
+        resultado = numero1 + numero2;
+        break;
+      case "-":
+        resultado = numero1 - numero2;
+        break;
+      case "*":
+        resultado = numero1 * numero2;
+        break;
+      case "/":
+        resultado = numero1 / numero2;
+        break;
+      default:
+        resultado = "Operação inválida";
+    }
+  
+    alert("Resultado: " + resultado);
+  </script>
+  
