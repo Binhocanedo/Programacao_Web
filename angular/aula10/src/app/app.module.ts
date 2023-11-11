@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MediaAlunoComponent } from './media-aluno/media-aluno.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 import { SeguroAutomobilisticoComponent } from './seguro-automobilistico/seguro-automobilistico.component';
+import { TarefasComponent } from './tarefas/tarefas.component';
+import { TarefasListaComponent } from './tarefas-lista/tarefas-lista.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SeguroAutomobilisticoComponent } from './seguro-automobilistico/seguro-
     CalculdoraComponent,
     MediaAlunoComponent,
     CadastroAlunoComponent,
-    SeguroAutomobilisticoComponent
+    SeguroAutomobilisticoComponent,
+    TarefasComponent,
+    TarefasListaComponent
   ],
   imports: [
     BrowserModule,
